@@ -24,6 +24,7 @@ function SignUp() {
         if(errors.name === "" && errors.email === "" && errors.password === "") {
             axios.post('http://localhost:8081/signup', values)
             .then(res => {
+                alert("User Created Successfully. Transferring to Login!");
                 navigate('/');
             })
             .catch(err => console.log(err));
@@ -31,7 +32,7 @@ function SignUp() {
     }
 
   return (
-    <div className='d-flex justify-content-center align-items-center bg-primary vh-100'>
+    <div className='d-flex justify-content-center align-items-center bg-success vh-100'>
         <div className='bg-white p-3 rounded w-25'>
             <h2 className='text-center'>Sign Up</h2>
             <form action="" onSubmit={handleSubmit}>

@@ -4,6 +4,7 @@ import { Dropdown, DropdownButton } from 'react-bootstrap';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import sharedVariables from './sharedVariables';
+import YouTubePlayer from './YTPlayer';
 
 function Home() {
   const [languages, setLanguages] = useState([]);
@@ -67,6 +68,7 @@ function Home() {
 
   const handleLogout = () => {
     sharedVariables.loginUser = null;
+    alert("Logged out!")
     navigate("/");
   };
 
@@ -82,7 +84,7 @@ function Home() {
   }
 
   return (
-    <div className='d-flex bg-primary vh-auto'>
+    <div className='d-flex bg-success min-vh-100'>
       <div className="container mt-5">
         <div className="row">
           <div className="col">
@@ -142,9 +144,11 @@ function Home() {
         {selectedLanguage && videoUrl && (
           <div className="mt-3">
             <h2>Basic {selectedLanguage} Conversation</h2>
-            <video controls>
-              <source src={videoUrl} type="video/mp4" />
-            </video>
+            {/* <video controls> */}
+              {/* <source src={videoUrl} type="video/mp4" /> */}
+              {/* <source src="https://www.youtube.com/watch?v=nf1rzqG3nvA&t=1s" type="video/mp4" /> */}
+            {/* </video> */}
+            <YouTubePlayer videoUrl={videoUrl}></YouTubePlayer>
           </div>
         )}
       </div>
