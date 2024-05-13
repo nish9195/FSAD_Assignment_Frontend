@@ -7,7 +7,7 @@ function Validation(values) {
         error.email = "Name should not be empty"
     }
     else if(!email_pattern.test(values.email)) {
-        error.email = "Email didn't match"
+        error.email = "Email didn't meet acceptance criteria"
     }
     else {
         error.email = ""
@@ -17,7 +17,7 @@ function Validation(values) {
         error.password = "Password should not be empty"
     }
     else if(!password_pattern.test(values.password)) {
-        error.password = "Password didn't match"
+        error.password = "Password didn't meet acceptance criteria"
     }
     else {
         error.password = ""
